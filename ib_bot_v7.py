@@ -30,7 +30,7 @@ class IB_Bot:
                     # print(ticker.time, ticker.close)
                     df.loc[ticker.time] = ticker.last
                     resampled: pd.DataFrame = df['last'].resample('1s').ohlc()
-                    self.callback(resampled)
+                    self.callback(resampled.index[-1], resampled['close'][-1])
 
     def stop(self):
         self.ib.disconnect()
