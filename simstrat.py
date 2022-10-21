@@ -26,9 +26,12 @@ class SimpleStrategy:
 
         if len(self.historic) > 100:
             if np.average(self.historic[-60:]) > close and not self.bought:
-                self.broker.place_order(QQQ_USD_SMART, Order(action='BUY', totalQuantity=500, orderType='MKT'))
+                print(time, "BOUGHT")
+                self.broker.place_order(QQQ_USD_SMART(), Order(action='BUY', totalQuantity=500, orderType='MKT'))
                 self.bought = True
                 
             elif np.average(self.historic[-60:]) < close and self.bought and not self.sold:
-                self.broker.place_order(QQQ_USD_SMART, Order(action='SELL', totalQuantity=500, orderType='MKT'))
+                print(time, "SOLD")
+                self.broker.place_order(QQQ_USD_SMART(), Order(action='SELL', totalQuantity=500, orderType='MKT'))
                 self.sold = True
+                self.bought = False

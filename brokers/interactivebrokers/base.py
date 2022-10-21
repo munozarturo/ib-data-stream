@@ -12,13 +12,13 @@ InteractiveBrokersDispatch: Dispatch = Dispatch(
 #      in multiple exchanges.
 
 # EXCHANGE
-NVDA_USD_NYSE = Stock("NVDA", "NYSE", "USD")
-SPY_USD_AMEX = Stock("SPY", "AMEX", "USD")
-QQQ_USD_NYSE = Stock("QQQ", "NYSE", "USD")
-DJI_USD_CME = Index("INDU", "CME", "USD")
+NVDA_USD_NYSE = lambda: Stock("NVDA", "NYSE", "USD")
+SPY_USD_AMEX = lambda: Stock("SPY", "AMEX", "USD")
+QQQ_USD_NYSE = lambda: Stock("QQQ", "NYSE", "USD")
+DJI_USD_CME = lambda: Index("INDU", "CME", "USD")
 
 # SMART
-NVDA_USD_SMART = Stock("NVDA", "SMART", "USD")
-SPY_USD_SMART = Stock("SPY", "SMART", "USD")
-QQQ_USD_SMART = Stock("QQQ", "SMART", "USD")
-DJI_USD_SMART = Index("INDU", "SMART", "USD")
+NVDA_USD_SMART = lambda: Stock("NVDA", "SMART", "USD")
+SPY_USD_SMART = lambda: Stock("SPY", "SMART", "USD")
+QQQ_USD_SMART = lambda: Stock("QQQ", "SMART", "USD")
+DJI_USD_SMART = lambda: Index("INDU", "SMART", "USD")
